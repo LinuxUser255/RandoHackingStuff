@@ -1,8 +1,11 @@
 
+
+
 ====================================================================================
 Some usefull commands/tools I found while watching IPSec vids.
 https://ippsec.rocks/
 ===================================================================================
+
 
 ======================================================
 smbclient
@@ -43,7 +46,6 @@ cd /mnt
 
 ==================================================================
 
-
 ==============================================
 smbmap
 ==============================================
@@ -51,7 +53,6 @@ smbmap
 smbmap -H 192.168.50.20
 
 smbmap -H 192.168.50.20 -u 'fakeusername'
-
 
 
 =================================================
@@ -108,29 +109,21 @@ less ldap-anonymous.out
 
 ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" '(objectClass=Person)' sAMAccountName | grep sAMAccountName 
 
-------------------------------------------------------------------------------------------------------------
-Make a user list to use with password list so that you can crack passwords
--------------------------------------------------------------------------------------------------------------
 
 ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" '(objectClass=Person)' sAMAccountName | grep sAMAccountName | awk '{print $2}' > userlist.ldap
 
-------------------------------------------------------------------------
-IMPACKET Python scripts!
-------------------------------------------------------------------------
+===================================================================
+Some IMPACKET Python script useage.
+=====================================================================
 
 sudo impacket-smbserver -smb2support -user yourname -password yourpassword sharename $(pwd)  
-
-
-
 
 Some how-to use of various impacket scripts & hashcat
 IMPACKET & hashcat 
 
 ./GetNPUsers.py -dc-ip 192.168.1.10 -request 'target.domain/'
 
-
 ./GetNPUsers.py -dc-ip 192.168.1.10 -request 'target.domain/' -format hashcat
-
 
 #Crack the pw with Hashcat
 Kerberos
@@ -163,7 +156,10 @@ hascat cmd
 
 hashcat -m 18200 hashse/svc-dude  /opt/wordlists/rockyou.txt -r rules/InsidePro-PasswordsPro.rule 
 
--------------------------------------------------------------------------------------------------
+
+you can also create wordlists with hashcat.. that will be posted later
+
+=============================================================================================
 Commands n stuff
 
 instead of grep, try ripgrep
@@ -178,17 +174,7 @@ also can search a directory:
 
 ls -l | rg -i "document"
 
-
-
-
-
-
-
-
-
-
-
------------------------------------------------------
+===================================================================================================
 
 winrm 
 
