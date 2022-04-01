@@ -1,9 +1,65 @@
 
-Just some commands I found while watching IPSec vids & other helpful notes and tips
+====================================================================================
+Some usefull commands/tools I found while watching IPSec vids.
+https://ippsec.rocks/
+===================================================================================
+
+======================================================
+smbclient
+=======================================================
+
+# list shares (sometimes no pw is requires)
+smbclient -L 192.168.50.20  
+
+smbclient -N -L  192.168.50.20
+
+smbclient -N  //192.168.50.20/sharename
+
+smbclient -U '' -L  //192.168.50.20
+
+smbclient -U 'guest' -L  //192.168.50.20
+              anonymous
+             
+# Logonto the Users share
+smbclient //192.168.50.20/Users
+
+
+#Software updates
+smbclient //192.168.50.20/Software_Updates
+
+=====================================================
+Mounting SMB
+
+-First install cifs-utils, so that you can mount the SMB remotely
+-sudo apt install cifs-utils
+-create the mountpoint first
+-sudo mkdir /mnt/usr
+-sudo mount -t cifs //192.168.50.20/Users /mnt/user
+-sudo mount -t cifs //192.168.50.20/Data /mnt/data
+
+Now you should be able to access the data you pulled from SMB in your /mnt directory
+
+cd /mnt
+
+==================================================================
+
+
+==============================================
+smbmap
+==============================================
+
+smbmap -H 192.168.50.20
+
+smbmap -H 192.168.50.20 -u 'fakeusername'
+
+
 
 =================================================
-CRACKMAP for SMB
+cracmapexec for SMB
 ================================================
+
+# list the shares
+crackmapexec smb 192.168.99.162 --shares
 
 #Get info on their pw policy:
 crackmapexec smb --pass-pol 192.168.99.162
@@ -13,6 +69,9 @@ crackmapexec smb  192.168.99.162 -u '' -p ''
 
 # enumerate a DC's users
 crackmapexec smb 192.168.99.162 --users
+
+# try with non-existant user
+crackmapexec smb 192.168.99.162 --shares -u fakeuname -p fakepwd 
 
 # discover who's logged on
 crackmapexec smb 192.168.99.162 --loggedon-users
@@ -26,16 +85,13 @@ crackmapexec smb 192.168.99.162 -u Guest -p rockyou.txt
 # Brute force
 crackmapexec smb 192.168.99.162 -u 'Administrator' -p 'PASS' --rid-brute
 
-# More fun
+# More stuff
 crackmapexec smb 192.168.1.10 -u svc-user -p userspw
 
 
 ===================================
 LDAP 
 ====================================
-
-#ATTN:  I'm using 192.168.1.10 as a place holder for the actual target IP
-If your on HTB it will be a 10.10.10 IP, but I like the aesthetics of Class C network range.
 
 
 #ldapsearch is a good alternative to enum4linux.
@@ -61,6 +117,11 @@ ldapsearch -h 192.168.1.10 -x -b "DC=name,DC=local" '(objectClass=Person)' sAMAc
 ------------------------------------------------------------------------
 IMPACKET Python scripts!
 ------------------------------------------------------------------------
+
+sudo impacket-smbserver -smb2support -user yourname -password yourpassword sharename $(pwd)  
+
+
+
 
 Some how-to use of various impacket scripts & hashcat
 IMPACKET & hashcat 
