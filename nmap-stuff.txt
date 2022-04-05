@@ -1,0 +1,44 @@
+Here you will find random notes, tips and templates on nmap
+-----------------------------------------------------------------------------------------
+
+Stealthy
+
+Scanning a Windows Domain Controller
+sudo nmap -p22,135,389,445,464,1025,1433 -r -n -Pn -data-length 200 -sV --version-all -sS -f -T0 -A 192.168.50.20
+
+[the break down]
+
+-p..............specifies the ports. here I know I'm scanning a Windows Domain Controller, hence 22,135,389,445,464,1025,1433
+
+-r..............specifies to scan the ports consecutively
+
+-Pn..............no host discovery
+
+-n................no DNS resolution
+
+
+-data-length.....Appends random data to sent packets
+
+--version-all.....Enable intensity level 9. Higher possibility of correctness. But Slower
+
+-sV..............Probe open ports to determine service/version info
+
+-sS.............Stealth Syn Scan
+
+-f..............fragment packets
+
+T0...............Very slow timing, "Paranoid"  Intrusion Detection System evasion
+
+Ports & Protocols
+22.........ssh
+135........RPC
+389........LDAP
+445........SMB
+464........Kerberos
+1025.......RPC (again)
+1433.......MS-SQL
+
+use -iL to specify a targets file
+use >  to output results to a file such as:    > scanned-host.txt
+
+------------
