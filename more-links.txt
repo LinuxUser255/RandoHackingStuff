@@ -13,7 +13,6 @@ ____________________________________________________
 
 #https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/
 
-
 #https://blackarch.org/downloads.html#ova-download
 
 #https://www.virtualbox.org
@@ -24,11 +23,14 @@ ____________________________________________________
 
 
 
-
 Hacking strategies, methods, resources tools and techniques
 __________________________________
 
 https://portswigger.net/web-security/learning-path
+
+https://book.hacktricks.xyz/welcome/readme
+
+https://github.com/swisskyrepo/PayloadsAllTheThings
 
 #http://www.0daysecurity.com/penetration-testing/enumeration.html
 
@@ -80,7 +82,6 @@ ________________________________________________________________________
 
 
 
-
 General Info
 ____________________________________________________________________________________
 #https://www.owasp.org/index.php/Main_Page
@@ -88,7 +89,6 @@ ________________________________________________________________________________
 #https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OTG-INPVAL-001)
 
 #https://zsecurity.org/hacking-and-security/
-
 
 
 
