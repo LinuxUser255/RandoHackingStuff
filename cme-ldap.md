@@ -6,8 +6,7 @@ Some usefull commands/tools I found while watching IPSec vids.
 <https://ippsec.rocks/>
 
 
-smbclient
-
+### smbclient
 ### list shares (sometimes no pw is requires)
 
 ```
