@@ -1,3 +1,3 @@
-# RandoHackingStuff
+# Hacking resources
 
-helpfull commands and tools
+helpfull commands, tools, templates and links.
