@@ -1,31 +1,7 @@
 
-```
-Essetial resources, tools and their links.
-Penetration Testing OS's
 
 ```
-
-
-- <https://www.kali.org/>
-- <https://www.blackarch.org/>
-- <https://www.parrot.sh/>
-- <https://www.backbox.org/>
-
-
-
-```
-Virtual Machines
-```
-- <https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/>
-- <https://blackarch.org/downloads.html#ova-download>
-- <https://www.virtualbox.org>
-- <https://www.vulnhub.com/?page=1>
-- <http://www.samurai-wtf.org/>
-
-
-
-```
-Hacking strategies, methods, resources tools and techniques
+ Resources 
 ```
 - <https://portswigger.net/web-security/learning-path>
 - <https://book.hacktricks.xyz/welcome/readme>
@@ -39,21 +15,14 @@ Hacking strategies, methods, resources tools and techniques
 - <https://www.hackers-arise.com/hacking-fundamentals-1>
 - <https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/>
 - <http://www.fuzzysecurity.com/tutorials/16.html>
-
-
-
-```
-Info gathering websites
-```
-- <https://www.shodan.io/>
-- <https://www.robtex.com/>
-- <https://toolbar.netcraft.com/site_report>
-
-
-
-```
-Cheet Sheats and programing
-```
+- <https://github.com/carlospolop/hacktricks/tree/master/pentesting-web>
+- <https://book.hacktricks.xyz/welcome/readme>
+- <https://pentesterlab.com/>
+- <https://university.apisec.ai/apisec-certified-expert>
+- <https://ippsec.rocks/?#>
+- <https://www.hackingarticles.in/burp-suite-for-pentester-software-vulnerability-scanner/>
+- <https://portswigger.net/web-security/sql-injection/cheat-sheet>
+- <https://portswigger.net/web-security/cross-site-scripting/cheat-sheet>
 - <https://www.stationx.net/nmap-cheat-sheet/>
 - <https://fatalsecurity.com/posts/sqlmap-cheatsheet-and-examples.html>
 - <https://docs.python.org/3/library/string.html#format-string-syntax>
@@ -62,7 +31,39 @@ Cheet Sheats and programing
 - <https://devhints.io/bash>
 - <https://www.base64decode.org/>
 
+```https://webmii.com/
+Operating Systems & more
+```
+- <https://www.kali.org/>
+- <https://www.blackarch.org/>
+- <https://www.parrot.sh/>
+- <https://www.backbox.org/>
+- <https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/>
+- <https://blackarch.org/downloads.html#ova-download>
+- <https://www.virtualbox.org>
+- <https://www.vulnhub.com/?page=1>
+- <http://www.samurai-wtf.org/>
 
+
+```
+OSINT & Info gathering websites
+```
+- <https://www.shodan.io/>
+- <https://www.robtex.com/>
+- <https://toolbar.netcraft.com/site_report>
+- <https://inteltechniques.com/podcast.html>
+- <https://www.truepeoplesearch.com/>
+- <https://www.fastpeoplesearch.com/>
+- <https://nuwber.com/>
+- <https://xlek.com/>
+- <https://www.cyberbackgroundchecks.com/>
+- <https://www.intelius.com/>
+- <https://radaris.com/>
+- <https://www.spytox.com/>
+- <https://www.advancedbackgroundchecks.com/>
+- <http://www.yasni.com/>
+- <https://thatsthem.com/>
+- <https://webmii.com/>
 
 ```
 General Info
