@@ -3,6 +3,8 @@
 ```
  Resources 
 ```
+- <https://github.com/swisskyrepo>
+- <https://gitlab.com/gh0s7>
 - <https://portswigger.net/web-security/learning-path>
 - <https://book.hacktricks.xyz/welcome/readme>
 - <https://github.com/swisskyrepo/PayloadsAllTheThings>
