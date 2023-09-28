@@ -1,10 +1,20 @@
 
 
 ```
- Resources 
+ Resources: Repos, payloads, supplimental material, info, Notes,checklists, writeups & more 
 ```
+- <https://github.com/topics/penetration-testing>
 - <https://github.com/swisskyrepo>
 - <https://gitlab.com/gh0s7>
+- <https://github.com/xalgord/Massive-Web-Application-Penetration-Testing-Bug-Bounty-Notes>
+- <https://github.com/wwong99/pentest-notes>
+- <https://github.com/Anof-cyber/Application-Security>
+- <https://github.com/The-Art-of-Hacking/h4cker>
+- <https://github.com/daffainfo/AllAboutBugBounty>
+- <https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters/blob/master/assets/blogposts.md>
+- <https://github.com/topics/bugbountytips>
+- <https://github.com/topics/bugbounty-writeups>
+- <https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters/blob/master/assets/tools.md>
 - <https://portswigger.net/web-security/learning-path>
 - <https://book.hacktricks.xyz/welcome/readme>
 - <https://github.com/swisskyrepo/PayloadsAllTheThings>
@@ -73,7 +83,6 @@ General Info
 - <https://www.owasp.org/index.php/Main_Page>
 - <https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OTG-INPVAL-001)>
 - <https://zsecurity.org/hacking-and-security/>
-
 
 
 ```
